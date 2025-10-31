@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" name="" id="userKey" placeholder="Enter Key...">
+        <input type="text" name="" id="userVal" placeholder="Enter value">
+        <button>Add Data</button>
+    
+    </form>
+    <hr>
+    <!-----getItem()-->
+    <input type="text" name="" id="search_key" placeholder="Enter key to search...">
+    <button id="searchBtn">Search</button>
+    <ul id="list_val"></ul>
+    <script>
+        document.querySelector("form").onsubmit = function(event){
+            const userKey = document.getElementById("userKey").value
+            const userVal = document.getElementById("userVal").value
+            if (userKey !== "" && userVal !== "") {
+                if (confirm("Do you want to store your data?")) {
+                    localStorage.setItem(userKey, userVal)
+                    console.log("Data stored")
+                }else{
+                    console.log("data not stored")
+                }
+
+            }
+            else{
+                console.log("Please enter both key and value")
+
+            }
+        }
+        // get item
+        document.querySelector("#searchBtn").onclick= function (){
+        const userKey=document.getElementById("search_key").value
+        let valfromstorage=localStorage.getItem(userKey)
+        const reslist=document.getElementById("list_val")
+        reslist.innerHTML+=<li>${valfromstorage}</li>
+
+        }
+    </script>
+</body>
+
+</html>
+
