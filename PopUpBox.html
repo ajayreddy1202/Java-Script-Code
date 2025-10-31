@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Alert / Confirm / Prompt Demo</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; padding: 24px; }
+    button { margin: 6px 8px 6px 0; padding: 8px 12px; border-radius: 6px; cursor: pointer; }
+    #output { margin-top: 18px; padding: 12px; border: 1px solid #ddd; border-radius: 6px; background:#fafafa; white-space:pre-wrap; }
+    small { color: #666; display:block; margin-top:6px; }
+  </style>
+</head>
+<body>
+  <h1>Alert / Confirm / Prompt — Combined Example</h1>
+
+  <div>
+    <button id="btnAlert">Show Alert</button>
+    <button id="btnConfirm">Show Confirm</button>
+    <button id="btnPrompt">Show Prompt</button>
+    <button id="btnAll">Show All (sequence)</button>
+  </div>
+
+  <div id="output">Result will appear here...</div>
+  <small>Note: pressing Cancel on Confirm/Prompt returns <em>false</em> or <em>null</em> respectively.</small>
+
+  <script>
+    const out = document.getElementById('output');
+
+    function log(...parts) {
+      out.textContent = parts.join(' ') + "\n\n" + out.textContent;
+    }
+
+    // 1) alert: simple notification with OK button
+    function showAlert() {
+      alert("This is an alert — it only has an OK button.");
+      log("Alert shown: user clicked OK.");
+    }
+
+    // 2) confirm: returns true (OK) or false (Cancel)
+    function showConfirm() {
+      const accepted = confirm("Do you accept the terms?");
+      if (accepted) {
+        log("Confirm: user clicked OK (true).");
+      } else {
+        log("Confirm: user clicked Cancel (false).");
+      }
+      return accepted;
+    }
+
+    // 3) prompt: returns the entered string or null if Cancel
+    function showPrompt() {
+      const name = prompt("What's your name?", "Guest");
+      if (name === null) {
+        log("Prompt: user cancelled (null).");
+      } else if (name.trim() === "") {
+        log("Prompt: user entered an empty string.");
+      } else {
+        log(`Prompt: user entered "${name}".`);
+      }
+      return name;
+    }
+
+    // Combined sequence: alert -> confirm -> prompt
+    // Demonstrates how results can be chained/used
+    function showAllSequence() {
+      alert("We will now ask 2 quick questions.\n\n(1) Confirm\n(2) Prompt");
+      const ok = confirm("Are you ready to answer a short question?");
+      if (!ok) {
+        log("Sequence: user not ready (confirmed false). Stopping sequence.");
+        return;
+      }
+
+      const answer = prompt("What's your favourite programming language?", "JavaScript");
+      if (answer === null) {
+        log("Sequence: prompt cancelled. User did not provide an answer.");
+      } else {
+        log(`Sequence: user ready and answered: "${answer}".`);
+      }
+    }
+
+    // Hook buttons
+    document.getElementById('btnAlert').addEventListener('click', showAlert);
+    document.getElementById('btnConfirm').addEventListener('click', showConfirm);
+    document.getElementById('btnPrompt').addEventListener('click', showPrompt);
+    document.getElementById('btnAll').addEventListener('click', showAllSequence);
+  </script>
+</body>
+</html>
