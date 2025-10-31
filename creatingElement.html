@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{ 
+            height: 300px;
+            width: 250px;
+            background-color: lightblue;
+            border: 0.5px black solid;
+        }
+        div>img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="createBox()">Create Box</button>
+    <script>
+        function createBox(){
+            // Create element
+            const divEle=document.createElement("div")
+            const imgEle=document.createElement("img")
+            console.log(divEle)
+
+            // Appending child
+            imgEle.src="img.i"
+            document.body.appendChild(divEle)
+            divEle.appendChild(imgEle)
+
+            // adding attribute
+            divEle.setAttribute("class","box")
+        }
+    </script>
+</body>
+</html>
