@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btm">Click Here</button>
+    <script>
+        document.querySelector("#btm").onclick=function(){
+            let userLogin=new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    let isUserLoggedIn=true
+                    if(isUserLoggedIn){
+                    resolve("Promise resolved successfully,user logged in...")
+                }else{
+                    reject("Oops...something went wrong")
+                }
+                },4000)
+            })
+            userLogin.then((res)=>{
+                console.log(res)
+            }).catch((err)=>{
+                console.log(err)
+            }).finally(()=>{
+                console.log("user Login completed.")
+            })
+        
+            
+        }
+    </script>
+</body>
+</html>
