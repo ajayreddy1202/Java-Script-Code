@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #first{
+            background-color: blueviolet;
+        }
+        #second{
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <div id="first">
+        <h1>This is first child in division first</h1>
+        <h1>This is second child in division first</h1>
+        <h1>This is third child in division first</h1>
+        <h1>This is fourth child in division first</h1>
+    </div>
+    <div id="second">
+        <h1 class="text">This is first child in division second</h1>
+        <h1 class="text">This is second child in division second</h1>
+        <h1 class="text">This is third child in division second</h1>
+        <h1 class="text">This is fourth child in division second</h1>
+    </div>
+    <button onclick="selectFirstElement()">querySelector</button>
+    <button onclick="targetAllElements()">querySelectorAll</button>
+    <script>
+        function selectFirstElement(){
+            // selecting direct child
+            // const firstEle=document.getElementById("second").querySelector
+            // (".text")
+
+            // selecting element using combinator
+            const firstEle=document.getElementById("second").querySelector
+            ("#second>.text")
+            console.log(firstEle)
+            firstEle.style.color='red'
+        }
+        function targetAllElements(){
+            // const allH1s=document.querySelectorAll("h1")
+            // console.log(allH1s)
+
+            const allH1s=document.getElementById("first").querySelectorAll
+            ("h1")
+           
+            // console.log(allH1s)
+            // console.log(allH1s[0])
+            for(let i of allH1s){
+                console.log(i)
+            i.style.backgroundColor="magenta"
+            i.style.color="white"
+            i.style.fontSize="2.5rem" 
+
+            }
+        }
+    </script>
+</body>
+</html>
