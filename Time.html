@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        let myTime=setTimeout(()=>{
+            console.log("This is line executing afterwaiting for 3 seconds")
+        },3000)
+        setTimeout(()=>{
+            console.log("This is second line")
+        },0)
+        console.log("This is third line")
+
+        // Stopping timeout
+        clearTimeout(myTime)
+    </script> -->
+
+    <!--setIntervel-->
+    <h1 id="time">0</h1>
+    <button>Start</button>
+    <button id="stop">Stop</button>
+    <script>
+        let myInterval
+        document.querySelector("button").onclick=function(){
+            let count=0
+            myInterval=setInterval(()=>{
+                console.log(++count)
+                document.querySelector('#time').textContent= +count
+            },1000)
+        }
+        document.getElementById("stop").onclick=function(){
+            clearInterval(myInterval)
+        }
+    </script>
+    <hr>
+    Clock
+    <h1>
+        <span id="hrs">00</span>
+        <span id="mins">00</span>
+        <span id="seconds">00</span>
+        <span>PM</span>
+    </h1>
+</body>
+</html>
