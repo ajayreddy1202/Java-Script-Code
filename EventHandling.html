@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ====== Global Styles ====== */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ====== Form Container ====== */
+/* form {
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  transition: all 0.3s ease;
+}
+
+form:hover {
+  transform: scale(1.02);
+} */
+
+/* ====== Fieldset and Legend ====== */
+/* fieldset {
+  border: none;
+}
+
+legend h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  letter-spacing: 1px;
+} */
+
+/* ====== Input Fields ====== */
+/* input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: 0.3s;
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 8px rgba(102, 126, 234, 0.5);
+  animation: shake 150ms ease-in-out alternate 3;
+} */
+
+/* Shake Animation */
+/* @keyframes shake {
+  from {
+    transform: translateX(-5px);
+  }
+  to {
+    transform: translateX(5px);
+  }
+} */
+
+/* ====== Submit & Button Styles ====== */
+/* input[type="submit"],
+input[type="button"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+input[type="submit"] {
+  background: #667eea;
+  color: #fff;
+}
+
+input[type="submit"]:hover {
+  background: #5563d0;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+input[type="button"] {
+  background: #e0e0e0;
+  color: #333;
+}
+
+input[type="button"]:hover {
+  background: #ccc;
+} */
+
+/* ====== Responsive Design ====== */
+/* @media (max-width: 450px) {
+  form {
+    width: 90%;
+    padding: 30px 20px;
+  }
+
+  legend h1 {
+    font-size: 1.5rem;
+  }
+} */
+#text{
+  height: 400px;
+  width: 300px;
+  overflow: scroll;
+}
+
+    </style>
+</head>
+<body>
+    <!-- <h1 onclick="changeContent()">Click Here</h1>
+    <script>
+        const changeContent=() =>{
+            document.querySelector("h1").textContent="Cliked"
+            document.querySelector("h1").style.color="red"
+        }
+    </script>
+    <hr>
+    <img src="c:\Users\ajay_reddy_bhumana\OneDrive\Pictures\ajbb.jpg" alt="" onmouseenter="changeImage()">
+    <script>
+    function changeImage() {
+        const imgEle = document.querySelector("img");
+        if (imgEle.src.includes("ajay.jpg")) {
+            imgEle.src = "c:\Users\ajay_reddy_bhumana\OneDrive\Pictures\ajay.jpg"; 
+        } else {
+            imgEle.src = "c:\Users\ajay_reddy_bhumana\OneDrive\Pictures\ajbb.jpg";
+        }
+    } 
+</script>-->
+    
+    <!-- <input type="text" name="userInp" id="" placeholder="Start typing...">
+    <h1>You Entered: <span id="res"></span></h1>
+    <script>
+        const inpEle=document.querySelector("input[type='text']")
+        inpEle.onkeydown=function(){
+            console.log("You pressed a key")
+            document.getElementById("res").textContent=inpEle.value
+        }
+    </script>
+    <hr>
+    <textarea name="" id="" cols="30" rows="10" maxlength="150"></textarea>
+    <p>Entered characters: <span id="res2"></span></p>
+    <p>Remaining character:150</p>
+    <script>
+        const textArea=document.querySelector("textarea")
+        let count=0
+        textArea.onkeyup=function(){
+            document.getElementById("res2").textContent=++count
+        }
+        console.log(count)
+    </script> -->
+    <!-- <hr>
+    <input type="text" name="" id="inp">
+    <script>
+        const userInpEle=document.getElementById("inp")
+        userInpEle.onkeypress=function (event){
+            alert(event.key)
+            // console.log(event.target.value)
+        }
+    </script> -->
+<!--Focus Events-->
+<!-- <input type="text" name="" id="inp2">
+<script>
+    const userInpTwo=document.getElementById("inp2")
+    userInpTwo.addEventListener("focus",() =>{
+        // Adding class
+        // syntax:element.ClassList.add("className")
+        userInpTwo.classList.add("newProp")
+    })
+    userInpTwo.addEventListener("blue",()=>{
+        userInpTwo.classList.remove("newProp")
+    })
+</script> -->
+<!-- <form>
+    <fieldset>
+        <legend>
+            <h1>Login</h1>
+        </legend>
+        <input type="text" name="uName"  oninput="userCredentials" id="UserName"><br><br>
+        <input type="password" name="" id="uPass" placeholder="Password"><br><br>
+        <label for ="">Role</label>
+        <select name="" id="roles" onchange="findRole()">
+            <option hidden>--Choose--</option>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+        </select>
+        <input type="submit" value="Login">
+        <input type="button" value="Cancle">
+    </fieldset>
+</form>
+<script>
+    document.querySelector("form").onsubmit=function(){
+        // alert{"Logged in successfully"}
+        window.location.href="https://pyspiders.com/"
+        event.preventDefault()
+    }
+    function userCredentials(){
+        let userName=document.getElementById("uName")
+        userName.value=userNameEle.value.toUpperCase()
+    }
+    function findRole{
+      let role=document.getElementById("role").value
+      console.log("You selected:",role)
+    }
+</script>
+<!--Window events-->
+<!--onload-->
+<!-- <script>
+  document.body.onload=function(){
+  alert('Page Loaded...')
+  }
+</script> --> 
+
+<!--onscoll-->
+<div id="text">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+  Iste sint maxime perspiciatis libero beatae officiis 
+  exercitationem recusandae in dolores harum, velit saepe
+  tenetur nam natus rem alias aspernatur omnis atque soluta cum.
+  Vero iste voluptatibus, nesciunt atque delectus sit
+  laboriosam velit explicabo tenetur sunt. Distinctio eaque
+  vitae est exercitationem magni adipisci. Labore, magnam est! 
+  Laudantium quam placeat eius, eos velit voluptatem. Provident
+  illo cupiditate voluptatum soluta consequuntur tempore assumenda 
+  aspernatur magni delectus quaerat, et, quis incidunt dicta odit 
+  quisquam voluptatem at. Sit temporibus doloremque hic eveniet dolor 
+  rem, officiis dolorum optio reprehenderit consectetur voluptatem? 
+  Unde recusandae maxime vitae deleniti, dolores rem veniam delectus 
+  quam obcaecati nesciunt officia ipsum illo modi ad et optio ipsam 
+  consequatur aliquid repellat. Illum molestias eaque maxime neque ducimus 
+  ratione voluptas facilis corporis dignissimos fugit sunt officiis nihil 
+  commodi iure pariatur, sit fugiat autem ab perferendis! Eius a sed sit 
+  voluptatum unde repellendus fuga aperiam non.
+</div><br>
+<p>Text scrolled:<strong id="scroll">0</strong>times</p>
+<script>
+  const textElement=document.getElementById("text")
+  let count=0
+  textElement.onscroll=function(){
+    document.getElementById("scroll").textContent=++count
+  }
+</script>
+
+<h2 id="resolution"></h2>
+
+<!--onresize-->
+<script>
+  document.body.onresize=function(){
+    let height=window.innerHeight
+    let width=window.innerWidth
+    document.getElementById("resolution").textContent=`${width} X $ {height}`
+  }
+</script>
+
+</body>
+</html>
