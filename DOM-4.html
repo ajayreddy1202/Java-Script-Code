@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            height: 300px;
+            width: 300px; 
+        }
+    </style>
+</head>
+<body>
+    <img class="product-images" src="c:\Users\ajay_reddy_bhumana\OneDrive\Pictures\ajay.jpg" alt="">
+    <img class="product-images" src="c:\Users\ajay_reddy_bhumana\OneDrive\Pictures\ajbb.jpg" alt="">
+    <img class="product-images" src="c:\Users\ajay_reddy_bhumana\OneDrive\Pictures\photo.jpg" alt="">
+    <img class="product-images" src="c:\Users\ajay_reddy_bhumana\OneDrive\Pictures\WhatsApp Image 2025-04-21 at 13.39.11_3730f52f.jpg" alt="">
+    <button id="ajay">Ajay</button>
+    <button id="count-ajay">Count Ajays</button>
+    <br>
+    <img src="" alt="" id="finalRes">
+    <script>
+        // document.querySelector("#ajay").onclick=function(){
+        //     let allImages=document.getElementsByClassName("product-images")
+        //     console.log(allImages)
+        //     console.log(allImages[0])
+        //     console.log(allImages[0].src)
+        //     let outPut=document.querySelector("#finalRes")
+        //     outPut.src=allImages[0].src
+        //     outPut.style.display="block"
+        // }
+    let allImages=document.getElementsByClassName("product-images")
+    for(let i of allImages){
+        i.onmouseenter=function(){
+            let res=document.querySelector("#finalRes").src=i.src
+            res.style.display="block"
+        }
+    }
+    </script>
+    <hr>
+
+    <h1>Selected Skills:<span id="skills"></span></h1>
+    <p>Choose your skills</p>
+    <input type="checkbox" name="skill" id="HTML" value="HTML"><label for="">HTML</label>
+    <input type="checkbox" name="skill" id="CSS" value="CSS"><label for="">CSS</label>
+    <input type="checkbox" name="skill" id="JavaScrip" value="JavaScrip"><label for="">JavaScript</label>
+    <input type="checkbox" name="skill" id="Python" value="Python"><label for="">Python</label>
+    <input type="checkbox" name="skill" id="Django" value="Django"><label for="">Django</label>
+    <script>
+        let allSkills=document.getElementsByName("skill")
+        console.log(allSkills)
+        let selectedSkills
+        for (let i of allSkills){
+            selectedSkills=[]
+            i.onchange=function(){
+                selectedSkills.push(i.value)
+                document.querySelector("#skills").textContent=selectedSkills.toString()
+            }
+        }
+        console.log(selectedSkills) 
+    </script>
+</body>
+</html>
